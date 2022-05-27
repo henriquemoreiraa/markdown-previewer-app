@@ -5,7 +5,7 @@ export const Container = styled.div`
     justify-content: space-between;  
     height: 100vh;
     width: 100vw;
-    background-color: #BEC3D0;
+    background-color: ${props => props.isDark ? '#BEC3D0' : '#080E1C'};
     font-family: 'Montserrat', monospace, sans-serif;
     `; 
     
@@ -51,7 +51,7 @@ export const Container = styled.div`
         font-size: 18px;
         margin: 0;
         background-color: #4E27CF; 
-        padding: 3px;
+        padding: 6px;
         text-align: center;
         border-radius: 15px;
     }
@@ -62,26 +62,54 @@ export const Container = styled.div`
     height: 95vh;
     border-radius: 15px;
     margin: 4px;  
-    background-color: #3E4B69;
+    background-color: ${props => props.isDark ? '#3E4B69' : '#262D40'};
     text-align: left;
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : 'black'};
     font-size: 20px;
 
+    .svg {
+        margin: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 39px;
+            width: 39px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border: none;
+            background-color: ${props => props.isDark ? '#3E4B69' : '#262D40'};
+
+            &:hover {
+                background-color: #34363bcb;
+            }
+        }
+
+        .svgs {
+
+            cursor: pointer;
+        }
+    }
+
     .Previewer-div {
-        background-color: #080E1C;
+        background-color: ${props => props.isDark ? '#080E1C' : '#fff'};
         width: 99%;
         height: 91.5%;
-        padding: 8px 0px 18px 10px;
+        padding: 8px 0px 7px 5px;
         border-radius: 0px 0px 15px 15px;
         overflow-y: scroll;
     }
 
-    p {
+    .PreviwerName {
         color: #fff;
         font-size: 18px;
         margin: 0;
         background-color: #4E27CF; 
-        padding: 5px;
+        padding: 6px;
         text-align: center;
         border-radius: 15px;
     }

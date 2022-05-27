@@ -12,6 +12,10 @@ import {ReactComponent as Check} from '../../svgs/square-check.svg'
 import {ReactComponent as Table} from '../../svgs/table.svg'
 import {ReactComponent as Strike} from '../../svgs/strikethrough.svg'
 
+import {ReactComponent as Sun} from '../../svgs/sun.svg'
+import {ReactComponent as Moon} from '../../svgs/moon.svg'
+
+
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useState } from 'react';
@@ -19,9 +23,10 @@ import * as C from './styles'
 
 export const Editor = () => {
     const [Previewer, setPreviewer] = useState('')
+    const [themeSwitcher, setThemeSwitcher] = useState(true)
 
     return (
-        <C.Container>
+        <C.Container isDark={themeSwitcher}>
             <C.Editor>
                 <div className='svg'>
                     <p>Editor</p>
@@ -40,10 +45,11 @@ export const Editor = () => {
                 <textarea autoFocus value={Previewer} onChange={(e) => setPreviewer(e.target.value)}></textarea>
             </C.Editor>
 
-            <C.Previewer>
+            <C.Previewer isDark={themeSwitcher}>
                 <div className='svg'>
-                    <p>Previewer</p> 
-                
+                    <p className='PreviwerName'>Previewer</p> 
+                    <button onClick={() => setThemeSwitcher(!themeSwitcher)}>    {themeSwitcher ? <Moon className='svgs'/> : <Sun className='svgs'/>} 
+                    </button>
                 </div>
                 <div className='Previewer-div'>
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
