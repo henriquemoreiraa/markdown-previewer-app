@@ -86,7 +86,6 @@ export const Container = styled.div`
         }
 
         .svgs {
-
             cursor: pointer;
         }
     }
@@ -98,6 +97,20 @@ export const Container = styled.div`
         padding: 8px 0px 0px 10px;
         border-radius: 0px 0px 15px 15px;
         overflow-y: scroll;
+
+        ::-webkit-scrollbar {
+            width: 10px;               
+        }
+          
+        ::-webkit-scrollbar-track {
+            background: #${props => props.isDark ? '#0e1524' : '#fff'};        
+        }
+          
+        ::-webkit-scrollbar-thumb {
+            background-color: #4E27CF;   
+            border-radius: 20px;       
+              
+        }
     }
 
     .PreviwerName {
