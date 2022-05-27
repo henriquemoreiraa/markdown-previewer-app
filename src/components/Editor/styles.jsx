@@ -2,21 +2,23 @@ import  styled  from 'styled-components'
 
 export const Container = styled.div`
     display: flex;
-    justify-content: space-between;  
+    justify-content: center;  
+    align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: ${props => props.isDark ? '#BEC3D0' : '#080E1C'};
+    background-color: ${props => props.isDark ? '#63676f' : '#63676f'};
     font-family: 'Montserrat', monospace, sans-serif;
     `; 
     
     export const Editor = styled.div`
-    width: 50%; 
-    height: 95vh;
+    width: 45%; 
+    height: 90vh;
     
     padding-right: 4px;
     border-radius: 15px;
     margin: 4px;
-    background-color: #3E4B69;
+    margin-right: 30px;
+    background-color: ${props => props.isDark ? '#3E4B69' : '#262D40'};
     
     textarea {
         height: 88%;
@@ -25,21 +27,14 @@ export const Container = styled.div`
         border: none;
         border-radius: 0px 0px 15px 15px;
         font-size: 20px;
-        color: #fff;
-        background-color: #080E1C;
+        color: ${props => props.isDark ? '#fff' : '#black'};
+        background-color: ${props => props.isDark ? '#0e1524' : '#fff'};
         padding: 8px 0px 23px 10px;
         font-family: 'Montserrat', monospace, sans-serif;
     }
 
     button {
         margin: 10px;
-    }
-
-    .svg {
-        margin: 10px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
     }
 
     .svgs {
@@ -58,14 +53,15 @@ export const Container = styled.div`
 `;
     
     export const Previewer = styled.div`
-    width: 50%; 
-    height: 95vh;
+    width: 45%; 
+    height: 90vh;
     border-radius: 15px;
-    margin: 4px;  
+    margin: 4px 6px 4px 4px;  
     background-color: ${props => props.isDark ? '#3E4B69' : '#262D40'};
     text-align: left;
     color: ${props => props.isDark ? '#fff' : 'black'};
     font-size: 20px;
+    padding-right: 4.9px;
 
     .svg {
         margin: 8px;
@@ -85,7 +81,7 @@ export const Container = styled.div`
             background-color: ${props => props.isDark ? '#3E4B69' : '#262D40'};
 
             &:hover {
-                background-color: #34363bcb;
+                background-color: #4E27CF;
             }
         }
 
@@ -96,10 +92,10 @@ export const Container = styled.div`
     }
 
     .Previewer-div {
-        background-color: ${props => props.isDark ? '#080E1C' : '#fff'};
+        background-color: ${props => props.isDark ? '#0e1524' : '#fff'};
         width: 99%;
         height: 91.5%;
-        padding: 8px 0px 7px 5px;
+        padding: 8px 0px 0px 10px;
         border-radius: 0px 0px 15px 15px;
         overflow-y: scroll;
     }
